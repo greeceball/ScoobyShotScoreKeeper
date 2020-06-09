@@ -15,6 +15,10 @@
 		34A6F287248F0F4900F2E418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34A6F286248F0F4900F2E418 /* Assets.xcassets */; };
 		34A6F28A248F0F4900F2E418 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34A6F288248F0F4900F2E418 /* LaunchScreen.storyboard */; };
 		34A6F295248F0F4900F2E418 /* ScoobyShotScoreKeeperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6F294248F0F4900F2E418 /* ScoobyShotScoreKeeperTests.swift */; };
+		34A6F2A2248F105400F2E418 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A6F2A1248F105400F2E418 /* CloudKit.framework */; };
+		34A6F2AA248F124900F2E418 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6F2A9248F124900F2E418 /* LoginViewController.swift */; };
+		34A6F2AC248F12ED00F2E418 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6F2AB248F12ED00F2E418 /* User.swift */; };
+		34A6F2AF248F177200F2E418 /* SearchableRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6F2AE248F177200F2E418 /* SearchableRecord.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,11 @@
 		34A6F290248F0F4900F2E418 /* ScoobyShotScoreKeeperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScoobyShotScoreKeeperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34A6F294248F0F4900F2E418 /* ScoobyShotScoreKeeperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoobyShotScoreKeeperTests.swift; sourceTree = "<group>"; };
 		34A6F296248F0F4900F2E418 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34A6F29F248F104500F2E418 /* ScoobyShotScoreKeeper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScoobyShotScoreKeeper.entitlements; sourceTree = "<group>"; };
+		34A6F2A1248F105400F2E418 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		34A6F2A9248F124900F2E418 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		34A6F2AB248F12ED00F2E418 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		34A6F2AE248F177200F2E418 /* SearchableRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableRecord.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34A6F2A2248F105400F2E418 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +76,7 @@
 				34A6F27A248F0F4800F2E418 /* ScoobyShotScoreKeeper */,
 				34A6F293248F0F4900F2E418 /* ScoobyShotScoreKeeperTests */,
 				34A6F279248F0F4800F2E418 /* Products */,
+				34A6F2A0248F105400F2E418 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,14 +92,11 @@
 		34A6F27A248F0F4800F2E418 /* ScoobyShotScoreKeeper */ = {
 			isa = PBXGroup;
 			children = (
-				34A6F27B248F0F4800F2E418 /* AppDelegate.swift */,
-				34A6F27D248F0F4800F2E418 /* SceneDelegate.swift */,
-				34A6F27F248F0F4800F2E418 /* FirstViewController.swift */,
-				34A6F281248F0F4800F2E418 /* SecondViewController.swift */,
-				34A6F283248F0F4800F2E418 /* Main.storyboard */,
-				34A6F286248F0F4900F2E418 /* Assets.xcassets */,
-				34A6F288248F0F4900F2E418 /* LaunchScreen.storyboard */,
-				34A6F28B248F0F4900F2E418 /* Info.plist */,
+				34A6F2AD248F175C00F2E418 /* Helpers + Extensions */,
+				34A6F2A6248F115100F2E418 /* Controllers */,
+				34A6F2A5248F114400F2E418 /* Models */,
+				34A6F2A4248F113D00F2E418 /* StoryBoards */,
+				34A6F2A3248F10AD00F2E418 /* Resources */,
 			);
 			path = ScoobyShotScoreKeeper;
 			sourceTree = "<group>";
@@ -100,6 +108,77 @@
 				34A6F296248F0F4900F2E418 /* Info.plist */,
 			);
 			path = ScoobyShotScoreKeeperTests;
+			sourceTree = "<group>";
+		};
+		34A6F2A0248F105400F2E418 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34A6F2A1248F105400F2E418 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		34A6F2A3248F10AD00F2E418 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				34A6F29F248F104500F2E418 /* ScoobyShotScoreKeeper.entitlements */,
+				34A6F27B248F0F4800F2E418 /* AppDelegate.swift */,
+				34A6F27D248F0F4800F2E418 /* SceneDelegate.swift */,
+				34A6F286248F0F4900F2E418 /* Assets.xcassets */,
+				34A6F288248F0F4900F2E418 /* LaunchScreen.storyboard */,
+				34A6F28B248F0F4900F2E418 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		34A6F2A4248F113D00F2E418 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				34A6F283248F0F4800F2E418 /* Main.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		34A6F2A5248F114400F2E418 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				34A6F2AB248F12ED00F2E418 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		34A6F2A6248F115100F2E418 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				34A6F2A8248F116600F2E418 /* View Controllers */,
+				34A6F2A7248F115E00F2E418 /* Model Controllers */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		34A6F2A7248F115E00F2E418 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		34A6F2A8248F116600F2E418 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				34A6F27F248F0F4800F2E418 /* FirstViewController.swift */,
+				34A6F281248F0F4800F2E418 /* SecondViewController.swift */,
+				34A6F2A9248F124900F2E418 /* LoginViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		34A6F2AD248F175C00F2E418 /* Helpers + Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				34A6F2AE248F177200F2E418 /* SearchableRecord.swift */,
+			);
+			path = "Helpers + Extensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,7 +284,10 @@
 			files = (
 				34A6F282248F0F4800F2E418 /* SecondViewController.swift in Sources */,
 				34A6F280248F0F4800F2E418 /* FirstViewController.swift in Sources */,
+				34A6F2AC248F12ED00F2E418 /* User.swift in Sources */,
 				34A6F27C248F0F4800F2E418 /* AppDelegate.swift in Sources */,
+				34A6F2AF248F177200F2E418 /* SearchableRecord.swift in Sources */,
+				34A6F2AA248F124900F2E418 /* LoginViewController.swift in Sources */,
 				34A6F27E248F0F4800F2E418 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,9 +448,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ScoobyShotScoreKeeper/ScoobyShotScoreKeeper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZJLVU28L56;
-				INFOPLIST_FILE = ScoobyShotScoreKeeper/Info.plist;
+				INFOPLIST_FILE = ScoobyShotScoreKeeper/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -384,9 +467,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ScoobyShotScoreKeeper/ScoobyShotScoreKeeper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZJLVU28L56;
-				INFOPLIST_FILE = ScoobyShotScoreKeeper/Info.plist;
+				INFOPLIST_FILE = ScoobyShotScoreKeeper/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
