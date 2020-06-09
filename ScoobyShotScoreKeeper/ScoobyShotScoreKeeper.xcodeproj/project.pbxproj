@@ -19,6 +19,9 @@
 		34A6F2AA248F124900F2E418 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6F2A9248F124900F2E418 /* LoginViewController.swift */; };
 		34A6F2AC248F12ED00F2E418 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6F2AB248F12ED00F2E418 /* User.swift */; };
 		34A6F2AF248F177200F2E418 /* SearchableRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6F2AE248F177200F2E418 /* SearchableRecord.swift */; };
+		34A6F2B1248F18D700F2E418 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6F2B0248F18D700F2E418 /* UserController.swift */; };
+		34A6F2B3248F196200F2E418 /* StoredVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6F2B2248F196200F2E418 /* StoredVariables.swift */; };
+		34A6F2B5248F1A7500F2E418 /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6F2B4248F1A7500F2E418 /* UserError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		34A6F2A9248F124900F2E418 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		34A6F2AB248F12ED00F2E418 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		34A6F2AE248F177200F2E418 /* SearchableRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableRecord.swift; sourceTree = "<group>"; };
+		34A6F2B0248F18D700F2E418 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		34A6F2B2248F196200F2E418 /* StoredVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredVariables.swift; sourceTree = "<group>"; };
+		34A6F2B4248F1A7500F2E418 /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +165,7 @@
 		34A6F2A7248F115E00F2E418 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				34A6F2B0248F18D700F2E418 /* UserController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -177,6 +184,8 @@
 			isa = PBXGroup;
 			children = (
 				34A6F2AE248F177200F2E418 /* SearchableRecord.swift */,
+				34A6F2B2248F196200F2E418 /* StoredVariables.swift */,
+				34A6F2B4248F1A7500F2E418 /* UserError.swift */,
 			);
 			path = "Helpers + Extensions";
 			sourceTree = "<group>";
@@ -283,7 +292,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				34A6F282248F0F4800F2E418 /* SecondViewController.swift in Sources */,
+				34A6F2B3248F196200F2E418 /* StoredVariables.swift in Sources */,
 				34A6F280248F0F4800F2E418 /* FirstViewController.swift in Sources */,
+				34A6F2B5248F1A7500F2E418 /* UserError.swift in Sources */,
+				34A6F2B1248F18D700F2E418 /* UserController.swift in Sources */,
 				34A6F2AC248F12ED00F2E418 /* User.swift in Sources */,
 				34A6F27C248F0F4800F2E418 /* AppDelegate.swift in Sources */,
 				34A6F2AF248F177200F2E418 /* SearchableRecord.swift in Sources */,

@@ -25,11 +25,11 @@ class User {
     let firstName: String
     let lastName: String
     var email: String
-    let pdgaNumber: Int
+    let pdgaNumber: Int?
     let userCKRecordID: CKRecord.ID
     var appleUserRef: CKRecord.Reference
     
-    init(username: String, firstName: String, lastName: String, pdgaNumber: Int, email: String, ckRecordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString), appleUserReference: CKRecord.Reference) {
+    init(username: String, firstName: String, lastName: String, pdgaNumber: Int?, email: String, ckRecordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString), appleUserReference: CKRecord.Reference) {
         self.firstName = firstName
         self.lastName = lastName
         self.username = username
@@ -74,5 +74,11 @@ extension User: Equatable {
 }
 
 extension User: SearchableRecord {
-    
+    func matches(searchTerm: String) -> Bool {
+        if username.lowercased().contains(searchTerm.lowercased()) {
+            return true
+        } else {
+            return false
+        }
+    }
 }
