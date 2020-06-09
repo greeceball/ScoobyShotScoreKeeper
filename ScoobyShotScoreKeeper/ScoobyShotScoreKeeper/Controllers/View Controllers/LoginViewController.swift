@@ -34,7 +34,6 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate {
         let signInBtn = ASAuthorizationAppleIDButton()
         signInBtn.addTarget(self, action: #selector(handleAppleIdRequest), for: .touchUpInside)
         signInBtn.cornerRadius = 10
-        //Add button on some view or stack
         
         logInStackView?.addArrangedSubview(signInBtn)
     }
@@ -91,25 +90,18 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate {
                     self.fetchAppleUserReference { (result) in
                         switch result {
                         case .success(let reference):
-                            guard let reference = reference else { return completion(.failure(.noUserLoggedIn)) }
+                            guard let reference = reference else { return }
                             
-                            let user = UserController.shared.createUserWith(username: userName, firstName: firstName, lastName: lastName, pdgaNumber: nil, email: email, appleUserReference: reference)
+                            let user = UserController.shared.createUserWith(username: userName, firstName: firstName, lastName: lastName, pdgaNumber: nil, email: userEmail, appleUserReference: reference)
                             
                             UserController.shared.saveUser(user: user) { (result) in
                                 switch result {
                                 case true:
                                     self.user = user
                                     StoredVariables.shared.userInfo["user"] = user
-                                    StoredVariables.shared.userInfo["collection"] = userCollection
-                                    UserDefaults.standard.set(userCollection.collectionCKRecordID.recordName, forKey: "userCollectionID")
-                                    
-                                    CollectionController.shared.saveCollection(collection: userCollection) { (result) in
-                                        self.saveUserID(credentials: credentials)
-                                        DispatchQueue.main.async {
-                                            self.finishLoggingIn()
-                                        }
+                                    DispatchQueue.main.async {
+                                        self.finishLoggingIn()
                                     }
-                                    
                                 case false:
                                     print("An error occured when trying to save user to cloudKit.")
                                 }
@@ -182,7 +174,7 @@ extension UIViewController {
     
     func showLoginViewController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let loginViewController = storyboard.instantiateViewController(withIdentifier: "loginViewController") as? LogInViewController {
+        if let loginViewController = storyboard.instantiateViewController(withIdentifier: "loginViewController") as? LoginViewController {
             self.present(loginViewController, animated: true, completion: nil)
         }
     }

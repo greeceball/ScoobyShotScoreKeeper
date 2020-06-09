@@ -20,7 +20,7 @@ class UserController {
     
     // Mark: - CRUD Func's
     // Mark: - Create
-    func createUserWith(username: String, firstName: String, lastName: String, pdgaNumber: Int?, email: String, appleUserReference: CKRecord.Reference, completion: @escaping (Result<User?, UserError>) -> Void) -> User {
+    func createUserWith(username: String, firstName: String, lastName: String, pdgaNumber: Int?, email: String, appleUserReference: CKRecord.Reference) -> User {
         
         let newUser = User(username: username, firstName: firstName, lastName: lastName, pdgaNumber: pdgaNumber, email: email, appleUserReference: appleUserReference)
         

@@ -77,24 +77,26 @@
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
         </scene>
-        <!--Login View Controller-->
+        <!--loginViewController-->
         <scene sceneID="KcI-mH-V2q">
             <objects>
-                <viewController id="lkq-dD-sfw" customClass="LoginViewController" customModule="ScoobyShotScoreKeeper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="loginViewController" id="lkq-dD-sfw" customClass="LoginViewController" customModule="ScoobyShotScoreKeeper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dWu-Pf-qDT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SoU-aJ-lIE">
-                                <rect key="frame" x="20" y="715" width="374" height="92"/>
+                                <rect key="frame" x="20" y="715" width="374" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="wkP-HU-URu"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="SoU-aJ-lIE" firstAttribute="trailing" secondItem="dWu-Pf-qDT" secondAttribute="trailingMargin" id="BoP-3x-5Wt"/>
-                            <constraint firstItem="UTu-Xh-GPP" firstAttribute="bottom" secondItem="SoU-aJ-lIE" secondAttribute="bottom" constant="55" id="Ilb-hH-HMn"/>
-                            <constraint firstItem="SoU-aJ-lIE" firstAttribute="top" secondItem="UTu-Xh-GPP" secondAttribute="top" constant="671" id="OTJ-Sh-DnY"/>
-                            <constraint firstItem="SoU-aJ-lIE" firstAttribute="leading" secondItem="dWu-Pf-qDT" secondAttribute="leadingMargin" id="aZj-dk-BbZ"/>
+                            <constraint firstItem="SoU-aJ-lIE" firstAttribute="trailing" secondItem="dWu-Pf-qDT" secondAttribute="trailingMargin" id="Rhg-xq-qMS"/>
+                            <constraint firstItem="SoU-aJ-lIE" firstAttribute="leading" secondItem="dWu-Pf-qDT" secondAttribute="leadingMargin" id="kqS-Mw-vTH"/>
+                            <constraint firstItem="SoU-aJ-lIE" firstAttribute="top" secondItem="UTu-Xh-GPP" secondAttribute="top" constant="671" id="rX0-bS-XKe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UTu-Xh-GPP"/>
                     </view>
@@ -104,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="or6-5w-We2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1389.8550724637682" y="6.6964285714285712"/>
+            <point key="canvasLocation" x="-1384" y="6"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
