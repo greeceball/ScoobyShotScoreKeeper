@@ -80,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				34A6F27A248F0F4800F2E418 /* ScoobyShotScoreKeeper */,
+				34A6F2AD248F175C00F2E418 /* Helpers + Extensions */,
 				34A6F293248F0F4900F2E418 /* ScoobyShotScoreKeeperTests */,
 				34A6F279248F0F4800F2E418 /* Products */,
 				34A6F2A0248F105400F2E418 /* Frameworks */,
@@ -98,7 +99,6 @@
 		34A6F27A248F0F4800F2E418 /* ScoobyShotScoreKeeper */ = {
 			isa = PBXGroup;
 			children = (
-				34A6F2AD248F175C00F2E418 /* Helpers + Extensions */,
 				34A6F2A6248F115100F2E418 /* Controllers */,
 				34A6F2A5248F114400F2E418 /* Models */,
 				34A6F2A4248F113D00F2E418 /* StoryBoards */,

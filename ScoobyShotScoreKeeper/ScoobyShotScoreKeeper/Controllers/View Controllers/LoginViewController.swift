@@ -67,7 +67,7 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate {
             }
         })
         
-        performSegue(withIdentifier: "toMainVC", sender: nil)
+        performSegue(withIdentifier: "toTabBarVC", sender: nil)
     }
     
     // MARK: - Navigation
