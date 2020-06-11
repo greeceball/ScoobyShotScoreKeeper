@@ -25,7 +25,7 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(appleIDStateRevoked), name: ASAuthorizationAppleIDProvider.credentialRevokedNotification, object: nil)
-        
+
         checkUserDefaultsIsNil()
         setUpSignInAppleButton()
     }
@@ -60,7 +60,8 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate {
             switch result {
                 
             case .success(let user):
-                currentUser = user.username.description
+                guard let username = user.username else { return }
+                currentUser = username.description
                 StoredVariables.shared.userInfo["user"] = currentUser
             case .failure(let error):
                 print(error.errorDescription)
@@ -87,29 +88,21 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate {
             
             UserController.shared.doesRecordExist(inRecordType: "User", withField: "userName", equalTo: userName) { (result) in
                 if result == false {
-                    self.fetchAppleUserReference { (result) in
+                    
+                    UserController.shared.createUserWith(username: userName, firstName: firstName, lastName: lastName, pdgaNumber: nil, email: userEmail) { (result) in
                         switch result {
-                        case .success(let reference):
-                            guard let reference = reference else { return }
                             
-                            let user = UserController.shared.createUserWith(username: userName, firstName: firstName, lastName: lastName, pdgaNumber: nil, email: userEmail, appleUserReference: reference)
-                            
-                            UserController.shared.saveUser(user: user) { (result) in
-                                switch result {
-                                case true:
-                                    self.user = user
-                                    StoredVariables.shared.userInfo["user"] = user
-                                    DispatchQueue.main.async {
-                                        self.finishLoggingIn()
-                                    }
-                                case false:
-                                    print("An error occured when trying to save user to cloudKit.")
-                                }
+                        case .success(let user):
+                            guard let user = user else { return }
+                            StoredVariables.shared.userInfo["user"] = user
+                            UserDefaults.standard.set(user.userCKRecordID.recordName, forKey: "userCKRecordID")
+                            self.saveUserID(credentials: credentials)
+                            DispatchQueue.main.async {
+                                self.finishLoggingIn()
                             }
                         case .failure(let error):
-                            print(error.localizedDescription)
+                            print(error.localizedDescription,"An error occured when trying to save user to cloudKit.")
                         }
-                        
                     }
                 } else if result == true {
                     DispatchQueue.main.async {
@@ -147,17 +140,11 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate {
             }
         }
     }
-    private func fetchAppleUserReference(completion: @escaping (Result<CKRecord.Reference?, UserError>) -> Void) {
-        
-        CKContainer.default().fetchUserRecordID { (recordID, error) in
-            if let error = error {
-                completion(.failure(.ckError(error)))
-            }
-            
-            if let recordID = recordID {
-                let reference = CKRecord.Reference(recordID: recordID, action: .deleteSelf)
-                completion(.success(reference))
-            }
+    func resetDefaults() {
+        let defaults = UserDefaults.standard
+        let dictionary = defaults.dictionaryRepresentation()
+        dictionary.keys.forEach { key in
+            defaults.removeObject(forKey: key)
         }
     }
 }

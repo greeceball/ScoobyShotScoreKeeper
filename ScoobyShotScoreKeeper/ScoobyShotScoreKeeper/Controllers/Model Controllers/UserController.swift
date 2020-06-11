@@ -15,37 +15,43 @@ class UserController {
     var currentUser: User? = StoredVariables.shared.userInfo["user"] as? User
     
     // Mark: - Source of Truth and Properties
-    var collectors: [User] = []
     let publicDB = CKContainer.default().publicCloudDatabase
     
     // Mark: - CRUD Func's
     // Mark: - Create
-    func createUserWith(username: String, firstName: String, lastName: String, pdgaNumber: Int?, email: String, appleUserReference: CKRecord.Reference) -> User {
+    func createUserWith(username: String, firstName: String, lastName: String, pdgaNumber: Int?, email: String, completion: @escaping (Result<User?, UserError>) -> Void)  {
         
-        let newUser = User(username: username, firstName: firstName, lastName: lastName, pdgaNumber: pdgaNumber, email: email, appleUserReference: appleUserReference)
-        
-        return newUser
-    }
-    
-    func saveUser(user: User, completion: @escaping (Bool) -> Void) {
-        
-        let userRecord = CKRecord(user: user)
-        // Call the save method on the database, pass in record
-        publicDB.save(userRecord) { (record, error) in
-            // Handle optional error
-            if let error = error {
-                print("Error in \(#function) : \(error.localizedDescription) : \(error)")
-                completion(false)
-                return
+        fetchAppleUserReference { (result) in
+            
+            switch result {
+                
+            case .success(let tempReference):
+                guard let tempReference = tempReference else { return completion(.failure(.noUserLoggedIn)) }
+                
+                let newUser = User(username: username, firstName: firstName, lastName: lastName, pdgaNumber: pdgaNumber, email: email, appleUserReference: tempReference)
+                
+                let userRecord = CKRecord(user: newUser)
+                // Call the save method on the database, pass in record
+                self.publicDB.save(userRecord) { (record, error) in
+                    // Handle optional error
+                    if let error = error {
+                        print("Error in \(#function) : \(error.localizedDescription) : \(error)")
+                        completion(.failure(.ckError(error)))
+                        return
+                    }
+                    // Unwrap the saved record, unwrap the user initialized from that record
+                    guard let record = record,
+                        let savedUser = User(ckRecord: record)
+                        else { return completion(.failure(.couldNotUnwrap))}
+                    
+                    print("Created User: \(record.recordID.recordName) successfully")
+                    
+                    completion(.success(savedUser))
+                }
+                
+            case .failure(let error):
+                print(error.localizedDescription)
             }
-            // Unwrap the saved record, unwrap the user initialized from that record
-            guard let record = record,
-                let _ = User(ckRecord: record)
-                else { return completion(false)}
-            
-            print("Created User: \(record.recordID.recordName) successfully")
-            
-            completion(true)
         }
     }
     
@@ -125,7 +131,7 @@ class UserController {
     }
     
     // Mark: - Helper Func's
-    private func fetchAppleUserReference(completion: @escaping (Result<CKRecord.Reference?, UserError>) -> Void) {
+    func fetchAppleUserReference(completion: @escaping (Result<CKRecord.Reference?, UserError>) -> Void) {
         CKContainer.default().fetchUserRecordID { (recordID, error) in
             if let error = error {
                 completion(.failure(.ckError(error)))
