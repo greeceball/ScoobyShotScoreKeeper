@@ -7,29 +7,162 @@
 //
 
 import UIKit
+import AuthenticationServices
+import CloudKit
 
-class LoginViewController: UIViewController {
-
+class LoginViewController: UIViewController, ASAuthorizationControllerDelegate {
+    
     @IBOutlet weak var logInStackView: UIStackView!
     
     let defaults = UserDefaults.standard
     var user: User?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    struct Keys {
+        static let userID = "userID"
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(appleIDStateRevoked), name: ASAuthorizationAppleIDProvider.credentialRevokedNotification, object: nil)
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        checkUserDefaultsIsNil()
+        setUpSignInAppleButton()
     }
-    */
+    
+    func setUpSignInAppleButton() {
+        let signInBtn = ASAuthorizationAppleIDButton()
+        signInBtn.addTarget(self, action: #selector(handleAppleIdRequest), for: .touchUpInside)
+        signInBtn.cornerRadius = 10
+        
+        logInStackView?.addArrangedSubview(signInBtn)
+    }
+    
+    @objc func handleAppleIdRequest() {
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        let request = appleIDProvider.createRequest()
+        request.requestedScopes = [.fullName, .email]
+        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+        authorizationController.delegate = self
+        authorizationController.performRequests()
+    }
+    
+    @objc func appleIDStateRevoked() {
+        defaults.set("", forKey: Keys.userID)
+        self.showLoginViewController()
+    }
+    
+    func finishLoggingIn() {
+        
+        var currentUser: String = ""
+        
+        UserController.shared.fetchUser(completion: { (result) in
+            switch result {
+                
+            case .success(let user):
+                guard let username = user.username else { return }
+                currentUser = username.description
+                StoredVariables.shared.userInfo["user"] = currentUser
+            case .failure(let error):
+                print(error.errorDescription)
+            }
+        })
+        
+        performSegue(withIdentifier: "toTabBarVC", sender: nil)
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    }
+    
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        switch authorization.credential {
+        case let credentials as ASAuthorizationAppleIDCredential :
+            let userName = credentials.user
+            let fullName = credentials.fullName
+            let email = credentials.email
+            print("User id is \(userName) \n Full Name is \(String(describing: fullName)) \n Email id is \(String(describing: email))")
+            
+            guard let firstName = fullName?.givenName, let lastName = fullName?.familyName, let userEmail = email else { return }
+            
+            UserController.shared.doesRecordExist(inRecordType: "User", withField: "userName", equalTo: userName) { (result) in
+                if result == false {
+                    
+                    UserController.shared.createUserWith(username: userName, firstName: firstName, lastName: lastName, pdgaNumber: nil, email: userEmail) { (result) in
+                        switch result {
+                            
+                        case .success(let user):
+                            guard let user = user else { return }
+                            StoredVariables.shared.userInfo["user"] = user
+                            UserDefaults.standard.set(user.userCKRecordID.recordName, forKey: "userCKRecordID")
+                            self.saveUserID(credentials: credentials)
+                            DispatchQueue.main.async {
+                                self.finishLoggingIn()
+                            }
+                        case .failure(let error):
+                            print(error.localizedDescription,"An error occured when trying to save user to cloudKit.")
+                        }
+                    }
+                } else if result == true {
+                    DispatchQueue.main.async {
+                        self.saveUserID(credentials: credentials)
+                        self.finishLoggingIn()
+                    }
+                }
+            }
+            
+        case _ as ASPasswordCredential :
+            break
+        default:
+            let alert = UIAlertController(title: "Apple SignIn", message: "Something went wrong with your Apple SignIn", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        let alert = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func saveUserID(credentials: ASAuthorizationAppleIDCredential) {
+        self.defaults.set(credentials.user, forKey: Keys.userID)
+    }
+    
+    func checkUserDefaultsIsNil() {
+        let username = defaults.value(forKey: Keys.userID) as? String ?? ""
+        
+        if username != "" {
+            DispatchQueue.main.async {
+                self.finishLoggingIn()
+            }
+        }
+    }
+    func resetDefaults() {
+        let defaults = UserDefaults.standard
+        let dictionary = defaults.dictionaryRepresentation()
+        dictionary.keys.forEach { key in
+            defaults.removeObject(forKey: key)
+        }
+    }
+}
 
+
+extension LoginViewController: ASAuthorizationControllerPresentationContextProviding {
+    
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return view.window!
+    }
+}
+
+extension UIViewController {
+    
+    func showLoginViewController() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let loginViewController = storyboard.instantiateViewController(withIdentifier: "loginViewController") as? LoginViewController {
+            self.present(loginViewController, animated: true, completion: nil)
+        }
+    }
 }

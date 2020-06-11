@@ -19,6 +19,9 @@
 		34A6F2AA248F124900F2E418 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6F2A9248F124900F2E418 /* LoginViewController.swift */; };
 		34A6F2AC248F12ED00F2E418 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6F2AB248F12ED00F2E418 /* User.swift */; };
 		34A6F2AF248F177200F2E418 /* SearchableRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6F2AE248F177200F2E418 /* SearchableRecord.swift */; };
+		34A6F2B1248F18D700F2E418 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6F2B0248F18D700F2E418 /* UserController.swift */; };
+		34A6F2B3248F196200F2E418 /* StoredVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6F2B2248F196200F2E418 /* StoredVariables.swift */; };
+		34A6F2B5248F1A7500F2E418 /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6F2B4248F1A7500F2E418 /* UserError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		34A6F2A9248F124900F2E418 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		34A6F2AB248F12ED00F2E418 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		34A6F2AE248F177200F2E418 /* SearchableRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableRecord.swift; sourceTree = "<group>"; };
+		34A6F2B0248F18D700F2E418 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		34A6F2B2248F196200F2E418 /* StoredVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredVariables.swift; sourceTree = "<group>"; };
+		34A6F2B4248F1A7500F2E418 /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				34A6F27A248F0F4800F2E418 /* ScoobyShotScoreKeeper */,
+				34A6F2AD248F175C00F2E418 /* Helpers + Extensions */,
 				34A6F293248F0F4900F2E418 /* ScoobyShotScoreKeeperTests */,
 				34A6F279248F0F4800F2E418 /* Products */,
 				34A6F2A0248F105400F2E418 /* Frameworks */,
@@ -92,7 +99,6 @@
 		34A6F27A248F0F4800F2E418 /* ScoobyShotScoreKeeper */ = {
 			isa = PBXGroup;
 			children = (
-				34A6F2AD248F175C00F2E418 /* Helpers + Extensions */,
 				34A6F2A6248F115100F2E418 /* Controllers */,
 				34A6F2A5248F114400F2E418 /* Models */,
 				34A6F2A4248F113D00F2E418 /* StoryBoards */,
@@ -159,6 +165,7 @@
 		34A6F2A7248F115E00F2E418 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				34A6F2B0248F18D700F2E418 /* UserController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -177,6 +184,8 @@
 			isa = PBXGroup;
 			children = (
 				34A6F2AE248F177200F2E418 /* SearchableRecord.swift */,
+				34A6F2B2248F196200F2E418 /* StoredVariables.swift */,
+				34A6F2B4248F1A7500F2E418 /* UserError.swift */,
 			);
 			path = "Helpers + Extensions";
 			sourceTree = "<group>";
@@ -283,7 +292,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				34A6F282248F0F4800F2E418 /* SecondViewController.swift in Sources */,
+				34A6F2B3248F196200F2E418 /* StoredVariables.swift in Sources */,
 				34A6F280248F0F4800F2E418 /* FirstViewController.swift in Sources */,
+				34A6F2B5248F1A7500F2E418 /* UserError.swift in Sources */,
+				34A6F2B1248F18D700F2E418 /* UserController.swift in Sources */,
 				34A6F2AC248F12ED00F2E418 /* User.swift in Sources */,
 				34A6F27C248F0F4800F2E418 /* AppDelegate.swift in Sources */,
 				34A6F2AF248F177200F2E418 /* SearchableRecord.swift in Sources */,
@@ -448,7 +460,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ScoobyShotScoreKeeper/ScoobyShotScoreKeeper.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ScoobyShotScoreKeeper/Resources/ScoobyShotScoreKeeper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZJLVU28L56;
 				INFOPLIST_FILE = ScoobyShotScoreKeeper/Resources/Info.plist;
@@ -456,7 +468,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Colby-Harris.ScoobyShotScoreKeeper";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Colby-Harris.ScoreKeeper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -467,7 +479,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ScoobyShotScoreKeeper/ScoobyShotScoreKeeper.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ScoobyShotScoreKeeper/Resources/ScoobyShotScoreKeeper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZJLVU28L56;
 				INFOPLIST_FILE = ScoobyShotScoreKeeper/Resources/Info.plist;
@@ -475,7 +487,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Colby-Harris.ScoobyShotScoreKeeper";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Colby-Harris.ScoreKeeper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
