@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lkq-dD-sfw">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--loginViewController-->
+        <scene sceneID="KcI-mH-V2q">
+            <objects>
+                <viewController title="loginViewController" id="lkq-dD-sfw" customClass="LoginViewController" customModule="ScoobyShotScoreKeeper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dWu-Pf-qDT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SoU-aJ-lIE">
+                                <rect key="frame" x="20" y="715" width="374" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="wkP-HU-URu"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="SoU-aJ-lIE" firstAttribute="trailing" secondItem="dWu-Pf-qDT" secondAttribute="trailingMargin" id="Rhg-xq-qMS"/>
+                            <constraint firstItem="SoU-aJ-lIE" firstAttribute="leading" secondItem="dWu-Pf-qDT" secondAttribute="leadingMargin" id="kqS-Mw-vTH"/>
+                            <constraint firstItem="SoU-aJ-lIE" firstAttribute="top" secondItem="UTu-Xh-GPP" secondAttribute="top" constant="671" id="rX0-bS-XKe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UTu-Xh-GPP"/>
+                    </view>
+                    <connections>
+                        <outlet property="logInStackView" destination="SoU-aJ-lIE" id="Nxe-Oq-hJ9"/>
+                        <segue destination="sC9-ZX-dTb" kind="show" identifier="toTabBarVC" id="CmF-so-gkG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="or6-5w-We2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1384" y="6"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="uuO-Ft-nL4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="sC9-ZX-dTb" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="sbh-Qs-iGO"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="odV-xF-yaA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-836" y="5"/>
+        </scene>
+    </scenes>
+</document>

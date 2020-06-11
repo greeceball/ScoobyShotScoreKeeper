@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3448D7E42492AD3D009DCEE5 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3448D7E22492AD3D009DCEE5 /* LogIn.storyboard */; };
 		34A6F27C248F0F4800F2E418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6F27B248F0F4800F2E418 /* AppDelegate.swift */; };
 		34A6F27E248F0F4800F2E418 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6F27D248F0F4800F2E418 /* SceneDelegate.swift */; };
 		34A6F280248F0F4800F2E418 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6F27F248F0F4800F2E418 /* FirstViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3448D7E32492AD3D009DCEE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ScoobyShotScoreKeeper/StoryBoards/Base.lproj/LogIn.storyboard; sourceTree = "<group>"; };
 		34A6F278248F0F4800F2E418 /* ScoobyShotScoreKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoobyShotScoreKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34A6F27B248F0F4800F2E418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34A6F27D248F0F4800F2E418 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 		34A6F2A4248F113D00F2E418 /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
+				3448D7E22492AD3D009DCEE5 /* LogIn.storyboard */,
 				34A6F283248F0F4800F2E418 /* Main.storyboard */,
 			);
 			path = StoryBoards;
@@ -271,6 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3448D7E42492AD3D009DCEE5 /* LogIn.storyboard in Resources */,
 				34A6F28A248F0F4900F2E418 /* LaunchScreen.storyboard in Resources */,
 				34A6F287248F0F4900F2E418 /* Assets.xcassets in Resources */,
 				34A6F285248F0F4800F2E418 /* Main.storyboard in Resources */,
@@ -323,6 +327,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		3448D7E22492AD3D009DCEE5 /* LogIn.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3448D7E32492AD3D009DCEE5 /* Base */,
+			);
+			name = LogIn.storyboard;
+			sourceTree = "<group>";
+		};
 		34A6F283248F0F4800F2E418 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
