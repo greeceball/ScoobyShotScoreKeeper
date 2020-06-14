@@ -1267,6 +1267,14 @@
             </objects>
             <point key="canvasLocation" x="5512" y="1092"/>
         </scene>
+        <!--Page View Controller-->
+        <scene sceneID="Hqn-gW-dwc">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" modalPresentationStyle="fullScreen" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="n3f-4B-QMp" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V9L-NQ-JGD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6294" y="1092"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="8CA-GG-LSs">
             <objects>

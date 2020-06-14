@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3426DCF124958EDB00584BCA /* WolfTeamSelectionBtn.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3426DCF024958EDB00584BCA /* WolfTeamSelectionBtn.xib */; };
+		3426DCF62495963E00584BCA /* WolfTeamSelectionBtnTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426DCF52495963D00584BCA /* WolfTeamSelectionBtnTableViewCell.swift */; };
+		3426DCF92495997700584BCA /* WolfTeamSelection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3426DCF82495997700584BCA /* WolfTeamSelection.xib */; };
+		3426DCFB24959A3200584BCA /* WolfSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426DCFA24959A3200584BCA /* WolfSelectionViewController.swift */; };
 		3448D7E42492AD3D009DCEE5 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3448D7E22492AD3D009DCEE5 /* LogIn.storyboard */; };
 		34A6F27C248F0F4800F2E418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6F27B248F0F4800F2E418 /* AppDelegate.swift */; };
 		34A6F27E248F0F4800F2E418 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6F27D248F0F4800F2E418 /* SceneDelegate.swift */; };
@@ -36,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3426DCF024958EDB00584BCA /* WolfTeamSelectionBtn.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WolfTeamSelectionBtn.xib; sourceTree = "<group>"; };
+		3426DCF52495963D00584BCA /* WolfTeamSelectionBtnTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WolfTeamSelectionBtnTableViewCell.swift; sourceTree = "<group>"; };
+		3426DCF82495997700584BCA /* WolfTeamSelection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WolfTeamSelection.xib; sourceTree = "<group>"; };
+		3426DCFA24959A3200584BCA /* WolfSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WolfSelectionViewController.swift; sourceTree = "<group>"; };
 		3448D7E32492AD3D009DCEE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ScoobyShotScoreKeeper/StoryBoards/Base.lproj/LogIn.storyboard; sourceTree = "<group>"; };
 		34A6F278248F0F4800F2E418 /* ScoobyShotScoreKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoobyShotScoreKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34A6F27B248F0F4800F2E418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +86,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3426DCF2249595B700584BCA /* Xib Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3426DCF52495963D00584BCA /* WolfTeamSelectionBtnTableViewCell.swift */,
+				3426DCFA24959A3200584BCA /* WolfSelectionViewController.swift */,
+			);
+			path = "Xib Controllers";
+			sourceTree = "<group>";
+		};
+		3426DCF7249598BD00584BCA /* Xib's */ = {
+			isa = PBXGroup;
+			children = (
+				3426DCF024958EDB00584BCA /* WolfTeamSelectionBtn.xib */,
+				3426DCF82495997700584BCA /* WolfTeamSelection.xib */,
+			);
+			path = "Xib's";
+			sourceTree = "<group>";
+		};
 		34A6F26F248F0F4800F2E418 = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +168,7 @@
 		34A6F2A4248F113D00F2E418 /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
+				3426DCF7249598BD00584BCA /* Xib's */,
 				3448D7E22492AD3D009DCEE5 /* LogIn.storyboard */,
 				34A6F283248F0F4800F2E418 /* Main.storyboard */,
 			);
@@ -176,6 +203,7 @@
 		34A6F2A8248F116600F2E418 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3426DCF2249595B700584BCA /* Xib Controllers */,
 				34A6F27F248F0F4800F2E418 /* FirstViewController.swift */,
 				34A6F281248F0F4800F2E418 /* SecondViewController.swift */,
 				34A6F2A9248F124900F2E418 /* LoginViewController.swift */,
@@ -275,9 +303,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3448D7E42492AD3D009DCEE5 /* LogIn.storyboard in Resources */,
+				3426DCF124958EDB00584BCA /* WolfTeamSelectionBtn.xib in Resources */,
 				34A6F28A248F0F4900F2E418 /* LaunchScreen.storyboard in Resources */,
 				34A6F287248F0F4900F2E418 /* Assets.xcassets in Resources */,
 				34A6F285248F0F4800F2E418 /* Main.storyboard in Resources */,
+				3426DCF92495997700584BCA /* WolfTeamSelection.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,12 +328,14 @@
 				34A6F282248F0F4800F2E418 /* SecondViewController.swift in Sources */,
 				34A6F2B3248F196200F2E418 /* StoredVariables.swift in Sources */,
 				34A6F280248F0F4800F2E418 /* FirstViewController.swift in Sources */,
+				3426DCFB24959A3200584BCA /* WolfSelectionViewController.swift in Sources */,
 				34A6F2B5248F1A7500F2E418 /* UserError.swift in Sources */,
 				34A6F2B1248F18D700F2E418 /* UserController.swift in Sources */,
 				34A6F2AC248F12ED00F2E418 /* User.swift in Sources */,
 				34A6F27C248F0F4800F2E418 /* AppDelegate.swift in Sources */,
 				34A6F2AF248F177200F2E418 /* SearchableRecord.swift in Sources */,
 				34A6F2AA248F124900F2E418 /* LoginViewController.swift in Sources */,
+				3426DCF62495963E00584BCA /* WolfTeamSelectionBtnTableViewCell.swift in Sources */,
 				34A6F27E248F0F4800F2E418 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
