@@ -30,6 +30,8 @@
 		34C85E7C2499221300D1C8A7 /* CustomPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C85E7B2499221300D1C8A7 /* CustomPageViewController.swift */; };
 		34C85ECE24992DB500D1C8A7 /* MainMini.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34C85ECD24992DB500D1C8A7 /* MainMini.storyboard */; };
 		34C85ED02499386500D1C8A7 /* ScoreCollection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34C85ECF2499386500D1C8A7 /* ScoreCollection.xib */; };
+		34C85ED22499452F00D1C8A7 /* ScoreCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34C85ED12499452F00D1C8A7 /* ScoreCollectionCell.xib */; };
+		34C85ED424997FF600D1C8A7 /* ScoreKeeperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C85ED324997FF600D1C8A7 /* ScoreKeeperViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		34C85E7B2499221300D1C8A7 /* CustomPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageViewController.swift; sourceTree = "<group>"; };
 		34C85ECD24992DB500D1C8A7 /* MainMini.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainMini.storyboard; sourceTree = "<group>"; };
 		34C85ECF2499386500D1C8A7 /* ScoreCollection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreCollection.xib; sourceTree = "<group>"; };
+		34C85ED12499452F00D1C8A7 /* ScoreCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreCollectionCell.xib; sourceTree = "<group>"; };
+		34C85ED324997FF600D1C8A7 /* ScoreKeeperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreKeeperViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 				3426DCF024958EDB00584BCA /* WolfTeamSelectionBtn.xib */,
 				3426DCF82495997700584BCA /* WolfTeamSelection.xib */,
 				34C85ECF2499386500D1C8A7 /* ScoreCollection.xib */,
+				34C85ED12499452F00D1C8A7 /* ScoreCollectionCell.xib */,
 			);
 			path = "Xib's";
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 				34A6F281248F0F4800F2E418 /* SecondViewController.swift */,
 				34A6F2A9248F124900F2E418 /* LoginViewController.swift */,
 				34C85E7B2499221300D1C8A7 /* CustomPageViewController.swift */,
+				34C85ED324997FF600D1C8A7 /* ScoreKeeperViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -317,6 +323,7 @@
 				34A6F287248F0F4900F2E418 /* Assets.xcassets in Resources */,
 				34C85ED02499386500D1C8A7 /* ScoreCollection.xib in Resources */,
 				34A6F285248F0F4800F2E418 /* Main.storyboard in Resources */,
+				34C85ED22499452F00D1C8A7 /* ScoreCollectionCell.xib in Resources */,
 				3426DCF92495997700584BCA /* WolfTeamSelection.xib in Resources */,
 				34C85ECE24992DB500D1C8A7 /* MainMini.storyboard in Resources */,
 			);
@@ -347,6 +354,7 @@
 				34A6F27C248F0F4800F2E418 /* AppDelegate.swift in Sources */,
 				34A6F2AF248F177200F2E418 /* SearchableRecord.swift in Sources */,
 				34A6F2AA248F124900F2E418 /* LoginViewController.swift in Sources */,
+				34C85ED424997FF600D1C8A7 /* ScoreKeeperViewController.swift in Sources */,
 				3426DCF62495963E00584BCA /* WolfTeamSelectionBtnTableViewCell.swift in Sources */,
 				34A6F27E248F0F4800F2E418 /* SceneDelegate.swift in Sources */,
 			);

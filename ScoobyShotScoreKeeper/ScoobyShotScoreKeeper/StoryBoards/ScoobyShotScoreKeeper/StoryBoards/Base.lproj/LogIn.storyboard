@@ -39,10 +39,10 @@
             </objects>
             <point key="canvasLocation" x="-1384" y="6"/>
         </scene>
-        <!--Main-->
+        <!--MainMini-->
         <scene sceneID="uuO-Ft-nL4">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="sC9-ZX-dTb" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="MainMini" id="sC9-ZX-dTb" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="sbh-Qs-iGO"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="odV-xF-yaA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

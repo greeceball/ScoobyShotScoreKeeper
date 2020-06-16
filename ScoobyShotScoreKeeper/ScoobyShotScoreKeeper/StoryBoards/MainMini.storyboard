@@ -398,17 +398,11 @@
                                         <rect key="frame" x="0.0" y="138.5" width="414" height="73"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="Wolf"/>
-                                        <connections>
-                                            <segue destination="vVR-TM-3op" kind="show" id="D90-Ng-W6A"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cn6-E3-89r">
                                         <rect key="frame" x="0.0" y="277.5" width="414" height="72.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="Skins / Ript Revenge"/>
-                                        <connections>
-                                            <segue destination="ul5-Vo-pfT" kind="show" id="cON-tA-At0"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -439,6 +433,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eeI-gx-GHe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4758" y="-771"/>
+        </scene>
+        <!--Score Keeper View Controller-->
+        <scene sceneID="Okr-Go-cnO">
+            <objects>
+                <viewController storyboardIdentifier="ScoreKeeperViewController" id="Z9e-cK-drf" customClass="ScoreKeeperViewController" customModule="ScoobyShotScoreKeeper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zHe-MI-TKa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Hole #)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLK-SG-tPI">
+                                <rect key="frame" x="149" y="93" width="116" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(# of points on the line)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhT-Hc-nNz">
+                                <rect key="frame" x="18" y="146" width="394" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XYg-pz-PX1">
+                                <rect key="frame" x="0.0" y="195" width="412" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="EhT-Hc-nNz" firstAttribute="trailing" secondItem="XYg-pz-PX1" secondAttribute="trailing" id="2al-v8-eoI"/>
+                            <constraint firstItem="tLK-SG-tPI" firstAttribute="centerX" secondItem="zHe-MI-TKa" secondAttribute="centerX" id="4Gb-e1-IKy"/>
+                            <constraint firstItem="tLK-SG-tPI" firstAttribute="top" secondItem="Ibc-wj-eqK" secondAttribute="top" constant="49" id="ABw-2Y-x35"/>
+                            <constraint firstItem="tLK-SG-tPI" firstAttribute="leading" secondItem="Ibc-wj-eqK" secondAttribute="leading" constant="149" id="F6s-Sl-SXz"/>
+                            <constraint firstItem="XYg-pz-PX1" firstAttribute="bottom" secondItem="Ibc-wj-eqK" secondAttribute="bottom" id="J11-In-4Sn"/>
+                            <constraint firstItem="EhT-Hc-nNz" firstAttribute="top" secondItem="tLK-SG-tPI" secondAttribute="bottom" constant="27" id="Mj6-xl-yca"/>
+                            <constraint firstItem="Ibc-wj-eqK" firstAttribute="trailing" secondItem="EhT-Hc-nNz" secondAttribute="trailing" constant="2" id="NYw-Bq-Hc0"/>
+                            <constraint firstItem="EhT-Hc-nNz" firstAttribute="leading" secondItem="Ibc-wj-eqK" secondAttribute="leading" constant="18" id="UsZ-2K-sZR"/>
+                            <constraint firstItem="XYg-pz-PX1" firstAttribute="leading" secondItem="Ibc-wj-eqK" secondAttribute="leading" id="crC-Lt-zzD"/>
+                            <constraint firstItem="XYg-pz-PX1" firstAttribute="top" secondItem="EhT-Hc-nNz" secondAttribute="bottom" constant="25" id="z3b-0v-Yv6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ibc-wj-eqK"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="evh-3j-9tr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5796" y="-771"/>
         </scene>
         <!--ProfileView-->
         <scene sceneID="0mw-Rw-w0N">
