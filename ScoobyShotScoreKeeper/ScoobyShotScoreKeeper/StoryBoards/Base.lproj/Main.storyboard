@@ -1132,7 +1132,7 @@
                     <navigationItem key="navigationItem" id="gEa-2K-vVV">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="87O-am-pOz">
                             <connections>
-                                <segue destination="2MH-cn-zKg" kind="show" id="MuV-rk-sgI"/>
+                                <segue destination="n3f-4B-QMp" kind="show" id="zUw-Ws-MlE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1265,15 +1265,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Biu-hP-rSh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5512" y="1092"/>
+            <point key="canvasLocation" x="7297" y="1317"/>
         </scene>
-        <!--Page View Controller-->
+        <!--Custom Page View Controller-->
         <scene sceneID="Hqn-gW-dwc">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" modalPresentationStyle="fullScreen" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="n3f-4B-QMp" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="CustomPageViewController" autoresizesArchivedViewToFullSize="NO" modalPresentationStyle="fullScreen" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="n3f-4B-QMp" customClass="CustomPageViewController" customModule="ScoobyShotScoreKeeper" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="WQz-nE-Zca"/>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V9L-NQ-JGD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6294" y="1092"/>
+            <point key="canvasLocation" x="5481" y="1092"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="8CA-GG-LSs">

@@ -27,6 +27,9 @@
 		34A6F2B1248F18D700F2E418 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6F2B0248F18D700F2E418 /* UserController.swift */; };
 		34A6F2B3248F196200F2E418 /* StoredVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6F2B2248F196200F2E418 /* StoredVariables.swift */; };
 		34A6F2B5248F1A7500F2E418 /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6F2B4248F1A7500F2E418 /* UserError.swift */; };
+		34C85E7C2499221300D1C8A7 /* CustomPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C85E7B2499221300D1C8A7 /* CustomPageViewController.swift */; };
+		34C85ECE24992DB500D1C8A7 /* MainMini.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34C85ECD24992DB500D1C8A7 /* MainMini.storyboard */; };
+		34C85ED02499386500D1C8A7 /* ScoreCollection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34C85ECF2499386500D1C8A7 /* ScoreCollection.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,9 @@
 		34A6F2B0248F18D700F2E418 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		34A6F2B2248F196200F2E418 /* StoredVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredVariables.swift; sourceTree = "<group>"; };
 		34A6F2B4248F1A7500F2E418 /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
+		34C85E7B2499221300D1C8A7 /* CustomPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageViewController.swift; sourceTree = "<group>"; };
+		34C85ECD24992DB500D1C8A7 /* MainMini.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainMini.storyboard; sourceTree = "<group>"; };
+		34C85ECF2499386500D1C8A7 /* ScoreCollection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreCollection.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,7 @@
 			children = (
 				3426DCF024958EDB00584BCA /* WolfTeamSelectionBtn.xib */,
 				3426DCF82495997700584BCA /* WolfTeamSelection.xib */,
+				34C85ECF2499386500D1C8A7 /* ScoreCollection.xib */,
 			);
 			path = "Xib's";
 			sourceTree = "<group>";
@@ -171,6 +178,7 @@
 				3426DCF7249598BD00584BCA /* Xib's */,
 				3448D7E22492AD3D009DCEE5 /* LogIn.storyboard */,
 				34A6F283248F0F4800F2E418 /* Main.storyboard */,
+				34C85ECD24992DB500D1C8A7 /* MainMini.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -207,6 +215,7 @@
 				34A6F27F248F0F4800F2E418 /* FirstViewController.swift */,
 				34A6F281248F0F4800F2E418 /* SecondViewController.swift */,
 				34A6F2A9248F124900F2E418 /* LoginViewController.swift */,
+				34C85E7B2499221300D1C8A7 /* CustomPageViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -306,8 +315,10 @@
 				3426DCF124958EDB00584BCA /* WolfTeamSelectionBtn.xib in Resources */,
 				34A6F28A248F0F4900F2E418 /* LaunchScreen.storyboard in Resources */,
 				34A6F287248F0F4900F2E418 /* Assets.xcassets in Resources */,
+				34C85ED02499386500D1C8A7 /* ScoreCollection.xib in Resources */,
 				34A6F285248F0F4800F2E418 /* Main.storyboard in Resources */,
 				3426DCF92495997700584BCA /* WolfTeamSelection.xib in Resources */,
+				34C85ECE24992DB500D1C8A7 /* MainMini.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +338,7 @@
 			files = (
 				34A6F282248F0F4800F2E418 /* SecondViewController.swift in Sources */,
 				34A6F2B3248F196200F2E418 /* StoredVariables.swift in Sources */,
+				34C85E7C2499221300D1C8A7 /* CustomPageViewController.swift in Sources */,
 				34A6F280248F0F4800F2E418 /* FirstViewController.swift in Sources */,
 				3426DCFB24959A3200584BCA /* WolfSelectionViewController.swift in Sources */,
 				34A6F2B5248F1A7500F2E418 /* UserError.swift in Sources */,
