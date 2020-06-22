@@ -53,6 +53,4 @@ extension WolfSelectionViewController: UITableViewDataSource, UITableViewDelegat
         
         return cell
     }
-    
-    
 }
