@@ -143,7 +143,7 @@
                     <navigationItem key="navigationItem" id="SHv-g4-MLX">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="HD8-zf-c4l">
                             <connections>
-                                <segue destination="Hgh-vu-6eb" kind="show" id="0F3-eM-CnK"/>
+                                <segue destination="Hgh-vu-6eb" kind="show" identifier="toPlayerSelection" id="0F3-eM-CnK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

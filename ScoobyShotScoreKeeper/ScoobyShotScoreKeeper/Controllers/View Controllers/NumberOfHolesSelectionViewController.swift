@@ -10,25 +10,30 @@ import UIKit
 
 class NumberOfHolesSelectionViewController: UIViewController {
 
+    //MARK: - Outlets and properties
     @IBOutlet weak var numberOfHolesPickerView: UIPickerView!
+    
+    var pickerData: [Int] = []
+    var numOfHoles: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loadPickerData()
         // Do any additional setup after loading the view.
     }
     
 
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toPlayerSelection" {
+            
+        }
     }
-    */
-
+    
+    func loadPickerData() {
+        pickerData = NumberOfHoles.holes
+    }
 }
 
 extension NumberOfHolesSelectionViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -40,5 +45,12 @@ extension NumberOfHolesSelectionViewController: UIPickerViewDelegate, UIPickerVi
         return NumberOfHoles.holes.count
     }
     
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let pickerRow = pickerData[row].description
+        return pickerRow
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        numOfHoles = pickerData[row]
+    }
     
 }
