@@ -9,15 +9,20 @@
 import UIKit
 
 class ScoreCardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
 
   //MARK: - Outlets and Properties
   @IBOutlet weak var tableView: UITableView!
   
+    var previousScoreCards: [ScoreCard] = []
   override func viewDidLoad() {
       super.viewDidLoad()
       
   }
-  
+    @IBAction func newScoreCardBtnTapped(_ sender: Any) {
+        
+    }
+    
   func setUpViews() {
       tableView.dataSource = self
       tableView.delegate = self
@@ -28,14 +33,18 @@ class ScoreCardViewController: UIViewController, UITableViewDataSource, UITableV
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    
+        return previousScoreCards.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "scoreCardCell", for: indexPath) as? ScoreCardTableViewCell
+        let score = ScoreCardController.shared.scoreCards[indexPath.row]
+        
+        cell?.scoreCard = score
+        
+        return cell ?? UITableViewCell()
     }
     
-
-
+    
 }
 

@@ -27,7 +27,7 @@ class User {
     let lastName: String
     var email: String
     let pdgaNumber: Int?
-    let userCKRecordID: CKRecord.ID
+    let recordID: CKRecord.ID
     var appleUserRef: CKRecord.Reference?
     
     init(username: String, firstName: String, lastName: String, pdgaNumber: Int?, email: String, ckRecordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString), appleUserReference: CKRecord.Reference?) {
@@ -36,7 +36,7 @@ class User {
         self.username = username
         self.pdgaNumber = pdgaNumber
         self.email = email
-        self.userCKRecordID = ckRecordID
+        self.recordID = ckRecordID
         self.appleUserRef = appleUserReference
     }
     
@@ -55,7 +55,7 @@ class User {
 
 extension CKRecord {
     convenience init(user: User) {
-        self.init(recordType: UserConstants.TypeKey, recordID: user.userCKRecordID)
+        self.init(recordType: UserConstants.TypeKey, recordID: user.recordID)
         
         self.setValuesForKeys([
             
@@ -79,7 +79,7 @@ extension CKRecord {
 
 extension User: Equatable {
     static func == (lhs: User, rhs: User) -> Bool {
-        return lhs.userCKRecordID == rhs.userCKRecordID
+        return lhs.recordID == rhs.recordID
     }
 }
 

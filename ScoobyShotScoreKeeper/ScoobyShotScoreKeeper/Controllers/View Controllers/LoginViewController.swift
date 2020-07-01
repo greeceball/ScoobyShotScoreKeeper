@@ -95,7 +95,7 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate {
                         case .success(let user):
                             guard let user = user else { return }
                             StoredVariables.shared.userInfo["user"] = user
-                            UserDefaults.standard.set(user.userCKRecordID.recordName, forKey: "userCKRecordID")
+                            UserDefaults.standard.set(user.recordID.recordName, forKey: "userCKRecordID")
                             self.saveUserID(credentials: credentials)
                             DispatchQueue.main.async {
                                 self.finishLoggingIn()

@@ -48,3 +48,20 @@ extension ScoreCard {
         self.init(players: players, recordID: ckRecord.recordID, userReferences: userReferences, holes: holes, scores: scores)
     }
 }
+
+extension CKRecord {
+    
+    convenience init(scoreCard: ScoreCard) {
+        self.init(recordType: ScoreStrings.recordTypeKey, recordID: scoreCard.recordID)
+        
+        self.setValuesForKeys([
+            ScoreStrings.playersKey : scoreCard.players,
+            ScoreStrings.holesKey : scoreCard.holes,
+            ScoreStrings.scoresKey : scoreCard.scores
+        ])
+        
+        if scoreCard.userReferences.count != 0 {
+            self.setValue(scoreCard.userReferences, forKey: ScoreStrings.userReferenceKey)
+        }
+    }
+}

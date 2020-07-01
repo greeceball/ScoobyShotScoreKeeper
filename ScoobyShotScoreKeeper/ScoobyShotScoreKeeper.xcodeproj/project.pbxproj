@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3413784B24ABC28B00B8080F /* ScoreCardError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3413784A24ABC28B00B8080F /* ScoreCardError.swift */; };
 		3426DCF124958EDB00584BCA /* WolfTeamSelectionBtn.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3426DCF024958EDB00584BCA /* WolfTeamSelectionBtn.xib */; };
 		3426DCF62495963E00584BCA /* WolfTeamSelectionBtnTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426DCF52495963D00584BCA /* WolfTeamSelectionBtnTableViewCell.swift */; };
 		3426DCF92495997700584BCA /* WolfTeamSelection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3426DCF82495997700584BCA /* WolfTeamSelection.xib */; };
 		3426DCFB24959A3200584BCA /* WolfSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426DCFA24959A3200584BCA /* WolfSelectionViewController.swift */; };
+		343F1AC824A2A51F00D5B436 /* ScoreCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343F1AC724A2A51F00D5B436 /* ScoreCardTableViewCell.swift */; };
 		3445134E24A1300800001E42 /* ScoreCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3445134D24A1300800001E42 /* ScoreCard.swift */; };
 		3445135124A15AEF00001E42 /* NumberOfHoles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3445135024A15AEF00001E42 /* NumberOfHoles.swift */; };
 		3445135324A15C7C00001E42 /* NumberOfHolesSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3445135224A15C7C00001E42 /* NumberOfHolesSelectionViewController.swift */; };
 		3448D7E42492AD3D009DCEE5 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3448D7E22492AD3D009DCEE5 /* LogIn.storyboard */; };
+		347D12BD24ABAE3300FFA03C /* ScoreCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347D12BC24ABAE3300FFA03C /* ScoreCardController.swift */; };
 		34A6F27C248F0F4800F2E418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6F27B248F0F4800F2E418 /* AppDelegate.swift */; };
 		34A6F27E248F0F4800F2E418 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6F27D248F0F4800F2E418 /* SceneDelegate.swift */; };
 		34A6F280248F0F4800F2E418 /* ScoreCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6F27F248F0F4800F2E418 /* ScoreCardViewController.swift */; };
@@ -48,14 +51,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3413784A24ABC28B00B8080F /* ScoreCardError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCardError.swift; sourceTree = "<group>"; };
 		3426DCF024958EDB00584BCA /* WolfTeamSelectionBtn.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WolfTeamSelectionBtn.xib; sourceTree = "<group>"; };
 		3426DCF52495963D00584BCA /* WolfTeamSelectionBtnTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WolfTeamSelectionBtnTableViewCell.swift; sourceTree = "<group>"; };
 		3426DCF82495997700584BCA /* WolfTeamSelection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WolfTeamSelection.xib; sourceTree = "<group>"; };
 		3426DCFA24959A3200584BCA /* WolfSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WolfSelectionViewController.swift; sourceTree = "<group>"; };
+		343F1AC724A2A51F00D5B436 /* ScoreCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCardTableViewCell.swift; sourceTree = "<group>"; };
 		3445134D24A1300800001E42 /* ScoreCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCard.swift; sourceTree = "<group>"; };
 		3445135024A15AEF00001E42 /* NumberOfHoles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOfHoles.swift; sourceTree = "<group>"; };
 		3445135224A15C7C00001E42 /* NumberOfHolesSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOfHolesSelectionViewController.swift; sourceTree = "<group>"; };
 		3448D7E32492AD3D009DCEE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ScoobyShotScoreKeeper/StoryBoards/Base.lproj/LogIn.storyboard; sourceTree = "<group>"; };
+		347D12BC24ABAE3300FFA03C /* ScoreCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCardController.swift; sourceTree = "<group>"; };
 		34A6F278248F0F4800F2E418 /* ScoobyShotScoreKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoobyShotScoreKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34A6F27B248F0F4800F2E418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34A6F27D248F0F4800F2E418 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +113,7 @@
 			children = (
 				3426DCF52495963D00584BCA /* WolfTeamSelectionBtnTableViewCell.swift */,
 				3426DCFA24959A3200584BCA /* WolfSelectionViewController.swift */,
+				343F1AC724A2A51F00D5B436 /* ScoreCardTableViewCell.swift */,
 			);
 			path = "Xib Controllers";
 			sourceTree = "<group>";
@@ -225,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				34A6F2B0248F18D700F2E418 /* UserController.swift */,
+				347D12BC24ABAE3300FFA03C /* ScoreCardController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -249,6 +257,7 @@
 				34A6F2AE248F177200F2E418 /* SearchableRecord.swift */,
 				34A6F2B2248F196200F2E418 /* StoredVariables.swift */,
 				34A6F2B4248F1A7500F2E418 /* UserError.swift */,
+				3413784A24ABC28B00B8080F /* ScoreCardError.swift */,
 			);
 			path = "Helpers + Extensions";
 			sourceTree = "<group>";
@@ -361,13 +370,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				34A6F282248F0F4800F2E418 /* ProfileViewController.swift in Sources */,
+				347D12BD24ABAE3300FFA03C /* ScoreCardController.swift in Sources */,
 				34A6F2B3248F196200F2E418 /* StoredVariables.swift in Sources */,
+				3413784B24ABC28B00B8080F /* ScoreCardError.swift in Sources */,
 				34C85E7C2499221300D1C8A7 /* CustomPageViewController.swift in Sources */,
 				34A6F280248F0F4800F2E418 /* ScoreCardViewController.swift in Sources */,
 				3426DCFB24959A3200584BCA /* WolfSelectionViewController.swift in Sources */,
 				34A6F2B5248F1A7500F2E418 /* UserError.swift in Sources */,
 				34A6F2B1248F18D700F2E418 /* UserController.swift in Sources */,
 				3445135124A15AEF00001E42 /* NumberOfHoles.swift in Sources */,
+				343F1AC824A2A51F00D5B436 /* ScoreCardTableViewCell.swift in Sources */,
 				34A6F2AC248F12ED00F2E418 /* User.swift in Sources */,
 				34A6F27C248F0F4800F2E418 /* AppDelegate.swift in Sources */,
 				3445134E24A1300800001E42 /* ScoreCard.swift in Sources */,

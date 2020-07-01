@@ -110,7 +110,7 @@ class UserController {
     }
     // Mark: - Delete
     func delete(_ user: User, completion: @escaping (Bool) -> Void) {
-        let operationDeleteUser = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: [user.userCKRecordID])
+        let operationDeleteUser = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: [user.recordID])
         
         operationDeleteUser.savePolicy = .changedKeys
         operationDeleteUser.qualityOfService = .userInteractive
