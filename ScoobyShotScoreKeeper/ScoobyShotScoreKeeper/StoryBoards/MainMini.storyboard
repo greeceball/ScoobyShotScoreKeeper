@@ -101,15 +101,7 @@
                                 </constraints>
                                 <state key="normal" title="New Score Card"/>
                                 <connections>
-                                    <action selector="newScoreCardBtnTapped:" destination="7IL-GX-ns5" eventType="touchUpInside" id="27v-vh-QwW"/>
-                                    <segue destination="l5w-3c-3Qn" kind="show" id="TPr-1f-7nz">
-                                        <string key="identifier">        let cell = tableView.dequeueReusableCell(withIdentifier: "scoreCardCell", for: indexPath) as? ScoreCardTableViewCell
-        let score = ScoreCardController.shared.scoreCards[indexPath.row]
-        
-        cell?.scoreCard = score
-        
-        return cell ?? UITableViewCell()</string>
-                                    </segue>
+                                    <segue destination="l5w-3c-3Qn" kind="show" identifier="toNumOfHolesVC" id="TPr-1f-7nz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -145,12 +137,13 @@
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SEj-rf-eeE">
                                 <rect key="frame" x="0.0" y="263" width="414" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.001343069947" green="0.97901135679999995" blue="0.0055117891170000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How many holes will be played?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Jq-6t-F5R">
                                 <rect key="frame" x="86" y="133" width="242" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.001343069947" green="0.97901135679999995" blue="0.0055117891170000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -172,10 +165,10 @@
             </objects>
             <point key="canvasLocation" x="2419" y="-320"/>
         </scene>
-        <!--View Controller-->
+        <!--Player Selection Table View Controller-->
         <scene sceneID="nie-Qr-HZy">
             <objects>
-                <viewController id="Hgh-vu-6eb" sceneMemberID="viewController">
+                <viewController id="Hgh-vu-6eb" customClass="PlayerSelectionTableViewController" customModule="ScoobyShotScoreKeeper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sBK-gA-ygr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -248,6 +241,13 @@
                     <navigationItem key="navigationItem" id="MQ4-64-ZXI">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="dsW-ha-l97"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nameOrNickNameLabel" destination="xj6-lo-YFy" id="DN0-Gp-8dm"/>
+                        <outlet property="numberOfRoundsLabel" destination="zJR-Fp-VtG" id="8Pg-8e-slH"/>
+                        <outlet property="playerPDGANumberLabel" destination="A1H-D9-RaK" id="9R7-10-4Zj"/>
+                        <outlet property="playerSelectionCell" destination="6gd-Nl-hn8" id="udq-aJ-RTg"/>
+                        <outlet property="playerSelectionTableView" destination="gax-dm-uhR" id="1A5-cC-9z2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yDd-ig-XPv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

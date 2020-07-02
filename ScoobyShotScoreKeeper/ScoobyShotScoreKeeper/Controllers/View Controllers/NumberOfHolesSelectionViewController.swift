@@ -19,6 +19,8 @@ class NumberOfHolesSelectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadPickerData()
+        numberOfHolesPickerView.delegate = self
+        numberOfHolesPickerView.dataSource = self
         // Do any additional setup after loading the view.
     }
     
@@ -26,8 +28,10 @@ class NumberOfHolesSelectionViewController: UIViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print(numOfHoles)
         if segue.identifier == "toPlayerSelection" {
-            
+            let destinationVC = segue.destination as? PlayerSelectionViewController
+            destinationVC?.numOfHoles = numOfHoles
         }
     }
     

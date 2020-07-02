@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3413784B24ABC28B00B8080F /* ScoreCardError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3413784A24ABC28B00B8080F /* ScoreCardError.swift */; };
+		34161B2A24AE35E400401E88 /* PlayerSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34161B2924AE35E400401E88 /* PlayerSelectionViewController.swift */; };
 		3426DCF124958EDB00584BCA /* WolfTeamSelectionBtn.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3426DCF024958EDB00584BCA /* WolfTeamSelectionBtn.xib */; };
 		3426DCF62495963E00584BCA /* WolfTeamSelectionBtnTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426DCF52495963D00584BCA /* WolfTeamSelectionBtnTableViewCell.swift */; };
 		3426DCF92495997700584BCA /* WolfTeamSelection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3426DCF82495997700584BCA /* WolfTeamSelection.xib */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		3413784A24ABC28B00B8080F /* ScoreCardError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCardError.swift; sourceTree = "<group>"; };
+		34161B2924AE35E400401E88 /* PlayerSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSelectionViewController.swift; sourceTree = "<group>"; };
 		3426DCF024958EDB00584BCA /* WolfTeamSelectionBtn.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WolfTeamSelectionBtn.xib; sourceTree = "<group>"; };
 		3426DCF52495963D00584BCA /* WolfTeamSelectionBtnTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WolfTeamSelectionBtnTableViewCell.swift; sourceTree = "<group>"; };
 		3426DCF82495997700584BCA /* WolfTeamSelection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WolfTeamSelection.xib; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				34C85E7B2499221300D1C8A7 /* CustomPageViewController.swift */,
 				34C85ED324997FF600D1C8A7 /* ScoreKeeperViewController.swift */,
 				3445135224A15C7C00001E42 /* NumberOfHolesSelectionViewController.swift */,
+				34161B2924AE35E400401E88 /* PlayerSelectionViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				34C85E7C2499221300D1C8A7 /* CustomPageViewController.swift in Sources */,
 				34A6F280248F0F4800F2E418 /* ScoreCardViewController.swift in Sources */,
 				3426DCFB24959A3200584BCA /* WolfSelectionViewController.swift in Sources */,
+				34161B2A24AE35E400401E88 /* PlayerSelectionViewController.swift in Sources */,
 				34A6F2B5248F1A7500F2E418 /* UserError.swift in Sources */,
 				34A6F2B1248F18D700F2E418 /* UserController.swift in Sources */,
 				3445135124A15AEF00001E42 /* NumberOfHoles.swift in Sources */,

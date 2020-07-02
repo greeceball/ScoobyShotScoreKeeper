@@ -45,6 +45,11 @@ class ScoreCardViewController: UIViewController, UITableViewDataSource, UITableV
         return cell ?? UITableViewCell()
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toNumOfHolesVC" {
+            let destinationVC = segue.destination as? NumberOfHolesSelectionViewController
+            
+        }
+    }
 }
 

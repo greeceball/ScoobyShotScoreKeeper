@@ -160,7 +160,7 @@ extension LoginViewController: ASAuthorizationControllerPresentationContextProvi
 extension UIViewController {
     
     func showLoginViewController() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "MainMini", bundle: nil)
         if let loginViewController = storyboard.instantiateViewController(withIdentifier: "loginViewController") as? LoginViewController {
             self.present(loginViewController, animated: true, completion: nil)
         }
