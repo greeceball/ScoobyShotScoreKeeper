@@ -18,6 +18,7 @@ struct UserConstants {
     fileprivate static let lastNameKey = "lastName"
     fileprivate static let pdgaNumberKey = "pdgaNumber"
     fileprivate static let emailKey = "email"
+    fileprivate static let friendRefKey = "friendRefs"
     
 }
 
@@ -29,8 +30,9 @@ class User {
     let pdgaNumber: Int?
     let recordID: CKRecord.ID
     var appleUserRef: CKRecord.Reference?
+    var friendUserRefs: [CKRecord.Reference?]
     
-    init(username: String, firstName: String, lastName: String, pdgaNumber: Int?, email: String, ckRecordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString), appleUserReference: CKRecord.Reference?) {
+    init(username: String, firstName: String, lastName: String, pdgaNumber: Int?, email: String, ckRecordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString), appleUserReference: CKRecord.Reference?, friendUserRefs: [CKRecord.Reference?]) {
         self.firstName = firstName
         self.lastName = lastName
         self.username = username
@@ -38,18 +40,21 @@ class User {
         self.email = email
         self.recordID = ckRecordID
         self.appleUserRef = appleUserReference
+        self.friendUserRefs = friendUserRefs
     }
     
     convenience init?(ckRecord: CKRecord) {
         guard let username = ckRecord[UserConstants.usernameKey] as? String,
         let firstName = ckRecord[UserConstants.firstNameKey] as? String,
         let lastName = ckRecord[UserConstants.lastNameKey] as? String,
-        let email = ckRecord[UserConstants.emailKey] as? String else { return nil }
+        let email = ckRecord[UserConstants.emailKey] as? String,
+        let friendUserRefs = ckRecord[UserConstants.friendRefKey] as? [CKRecord.Reference?] else { return nil }
         
             let appleUserRef = ckRecord[UserConstants.appleUserRefKey] as? CKRecord.Reference
             let pdgaNumber = ckRecord[UserConstants.pdgaNumberKey] as? Int
         
-        self.init(username: username, firstName: firstName, lastName: lastName, pdgaNumber: pdgaNumber, email: email, appleUserReference: appleUserRef)
+        
+        self.init(username: username, firstName: firstName, lastName: lastName, pdgaNumber: pdgaNumber, email: email, appleUserReference: appleUserRef, friendUserRefs: friendUserRefs)
     }
 }
 
@@ -73,6 +78,9 @@ extension CKRecord {
         }
         if user.appleUserRef != nil {
             self.setValue(user.appleUserRef, forKey: UserConstants.appleUserRefKey)
+        }
+        if user.friendUserRefs.count != 0 {
+            self.setValue(user.friendUserRefs, forKey: UserConstants.friendRefKey)
         }
     }
 }

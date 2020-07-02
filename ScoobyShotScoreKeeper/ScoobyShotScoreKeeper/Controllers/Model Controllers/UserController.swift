@@ -142,6 +142,22 @@ class UserController {
             }
         }
     }
+    
+    func fetchFriends(userRef: CKRecord.Reference, completion: @escaping (Result<User, UserError>) -> Void) {
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType: UserConstants.TypeKey, predicate: predicate)
+        
+        self.publicDB.perform(query, inZoneWith: nil) { (record, error) in
+            if let error = error {
+                return completion(.failure(.ckError(error)))
+            }
+            
+            guard let record = record?.first, let foundUser = User(ckRecord: record) else {return completion(.failure(.couldNotUnwrap))}
+            print("Fetched Friend: \(record.recordID.recordName.description) successfully")
+            completion(.success(foundUser))
+        }
+        
+    }
 }
 
 extension UserController {
