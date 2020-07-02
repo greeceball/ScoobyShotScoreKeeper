@@ -13,10 +13,6 @@ class PlayerSelectionViewController: UIViewController {
     //MARK: - Outlets and Properties
     var numOfHoles: Int = 0
     @IBOutlet weak var playerSelectionTableView: UITableView!
-    @IBOutlet weak var playerSelectionCell: UITableViewCell!
-    @IBOutlet weak var nameOrNickNameLabel: UILabel!
-    @IBOutlet weak var playerPDGANumberLabel: UILabel!
-    @IBOutlet weak var numberOfRoundsLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -19,7 +19,7 @@ class UserController {
     
     // Mark: - CRUD Func's
     // Mark: - Create
-    func createUserWith(username: String, firstName: String, lastName: String, pdgaNumber: Int?, email: String, completion: @escaping (Result<User?, UserError>) -> Void)  {
+    func createUserWith(username: String, firstName: String, lastName: String, pdgaNumber: Int?, email: String, friends: [CKRecord.Reference?], completion: @escaping (Result<User?, UserError>) -> Void)  {
         
         fetchAppleUserReference { (result) in
             
@@ -28,7 +28,7 @@ class UserController {
             case .success(let tempReference):
                 guard let tempReference = tempReference else { return completion(.failure(.noUserLoggedIn)) }
                 
-                let newUser = User(username: username, firstName: firstName, lastName: lastName, pdgaNumber: pdgaNumber, email: email, appleUserReference: tempReference)
+                let newUser = User(username: username, firstName: firstName, lastName: lastName, pdgaNumber: pdgaNumber, email: email, appleUserReference: tempReference, friendUserRefs: friends)
                 
                 let userRecord = CKRecord(user: newUser)
                 // Call the save method on the database, pass in record

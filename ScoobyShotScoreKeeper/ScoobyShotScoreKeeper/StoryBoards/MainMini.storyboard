@@ -117,7 +117,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZOw-fh-Qnt"/>
                     </view>
-                    <navigationItem key="navigationItem" id="g0J-tg-7M8"/>
+                    <navigationItem key="navigationItem" id="g0J-tg-7M8">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="TWm-SS-PM4">
+                            <connections>
+                                <action selector="shareBtnTapped:" destination="7IL-GX-ns5" id="8fu-yZ-lSE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="zcY-Ns-8Jq" id="67A-1R-n8o"/>
                     </connections>
@@ -242,10 +248,6 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="dsW-ha-l97"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="nameOrNickNameLabel" destination="xj6-lo-YFy" id="DN0-Gp-8dm"/>
-                        <outlet property="numberOfRoundsLabel" destination="zJR-Fp-VtG" id="8Pg-8e-slH"/>
-                        <outlet property="playerPDGANumberLabel" destination="A1H-D9-RaK" id="9R7-10-4Zj"/>
-                        <outlet property="playerSelectionCell" destination="6gd-Nl-hn8" id="udq-aJ-RTg"/>
                         <outlet property="playerSelectionTableView" destination="gax-dm-uhR" id="1A5-cC-9z2"/>
                     </connections>
                 </viewController>

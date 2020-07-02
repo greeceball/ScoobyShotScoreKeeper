@@ -19,6 +19,7 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate {
     
     struct Keys {
         static let userID = "userID"
+        static let userRefKey = "userRef"
     }
     
     override func viewDidLoad() {
@@ -63,6 +64,7 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate {
                 guard let username = user.username else { return }
                 currentUser = username.description
                 StoredVariables.shared.userInfo["user"] = currentUser
+                print(self.defaults.value(forKey: Keys.userID) as? String)
             case .failure(let error):
                 print(error.errorDescription)
             }
@@ -89,13 +91,15 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate {
             UserController.shared.doesRecordExist(inRecordType: "User", withField: "userName", equalTo: userName) { (result) in
                 if result == false {
                     
-                    UserController.shared.createUserWith(username: userName, firstName: firstName, lastName: lastName, pdgaNumber: nil, email: userEmail) { (result) in
+                    UserController.shared.createUserWith(username: userName, firstName: firstName, lastName: lastName, pdgaNumber: nil, email: userEmail, friends: []) { (result) in
                         switch result {
                             
                         case .success(let user):
                             guard let user = user else { return }
                             StoredVariables.shared.userInfo["user"] = user
                             UserDefaults.standard.set(user.recordID.recordName, forKey: "userCKRecordID")
+                            StoredVariables.shared.userInfo["userRef"] = user.appleUserRef
+                            UserDefaults.standard.set(user.appleUserRef, forKey: "userRef")
                             self.saveUserID(credentials: credentials)
                             DispatchQueue.main.async {
                                 self.finishLoggingIn()

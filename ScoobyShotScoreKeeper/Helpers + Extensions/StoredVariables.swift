@@ -11,5 +11,5 @@ import Foundation
 class StoredVariables {
     
     static let shared = StoredVariables()
-    var userInfo: [String: Any] = [:]
+    var userInfo: [String : Any] = [:]
 }
