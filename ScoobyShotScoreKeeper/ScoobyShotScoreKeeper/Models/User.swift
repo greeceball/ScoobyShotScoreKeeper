@@ -43,18 +43,22 @@ class User {
         self.friendUserRefs = friendUserRefs
     }
     
+
+}
+extension User {
     convenience init?(ckRecord: CKRecord) {
         guard let username = ckRecord[UserConstants.usernameKey] as? String,
         let firstName = ckRecord[UserConstants.firstNameKey] as? String,
         let lastName = ckRecord[UserConstants.lastNameKey] as? String,
-        let email = ckRecord[UserConstants.emailKey] as? String,
-        let friendUserRefs = ckRecord[UserConstants.friendRefKey] as? [CKRecord.Reference?] else { return nil }
+        let email = ckRecord[UserConstants.emailKey] as? String
+         else { return nil }
         
-            let appleUserRef = ckRecord[UserConstants.appleUserRefKey] as? CKRecord.Reference
-            let pdgaNumber = ckRecord[UserConstants.pdgaNumberKey] as? Int
+        let friendUserRefs = ckRecord[UserConstants.friendRefKey] as? [CKRecord.Reference?]
+        let appleUserRef = ckRecord[UserConstants.appleUserRefKey] as? CKRecord.Reference
+        let pdgaNumber = ckRecord[UserConstants.pdgaNumberKey] as? Int
         
         
-        self.init(username: username, firstName: firstName, lastName: lastName, pdgaNumber: pdgaNumber, email: email, appleUserReference: appleUserRef, friendUserRefs: friendUserRefs)
+        self.init(username: username, firstName: firstName, lastName: lastName, pdgaNumber: pdgaNumber, email: email, appleUserReference: appleUserRef, friendUserRefs: friendUserRefs ?? [])
     }
 }
 

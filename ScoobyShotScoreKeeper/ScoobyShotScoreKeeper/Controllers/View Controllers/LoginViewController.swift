@@ -24,7 +24,8 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        resetDefaults()
+        printUserDefaults()
         NotificationCenter.default.addObserver(self, selector: #selector(appleIDStateRevoked), name: ASAuthorizationAppleIDProvider.credentialRevokedNotification, object: nil)
 
         checkUserDefaultsIsNil()
@@ -39,6 +40,12 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate {
         logInStackView?.addArrangedSubview(signInBtn)
     }
     
+    func printUserDefaults() {
+        for (key, value) in defaults.dictionaryRepresentation() {
+            print("\(key) = \(value) \n")
+        }
+    }
+    
     @objc func handleAppleIdRequest() {
         let appleIDProvider = ASAuthorizationAppleIDProvider()
         let request = appleIDProvider.createRequest()
@@ -50,6 +57,7 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate {
     
     @objc func appleIDStateRevoked() {
         defaults.set("", forKey: Keys.userID)
+        defaults.synchronize()
         self.showLoginViewController()
     }
     
@@ -64,12 +72,12 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate {
                 guard let username = user.username else { return }
                 currentUser = username.description
                 StoredVariables.shared.userInfo["user"] = currentUser
-                print(self.defaults.value(forKey: Keys.userID) as? String)
             case .failure(let error):
                 print(error.errorDescription)
             }
         })
         
+        ScoreCardController.shared
         performSegue(withIdentifier: "toTabBarVC", sender: nil)
     }
     
@@ -101,6 +109,7 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate {
                             StoredVariables.shared.userInfo["userRef"] = user.appleUserRef
                             UserDefaults.standard.set(user.appleUserRef, forKey: "userRef")
                             self.saveUserID(credentials: credentials)
+                            self.defaults.synchronize()
                             DispatchQueue.main.async {
                                 self.finishLoggingIn()
                             }
@@ -133,6 +142,7 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate {
     
     func saveUserID(credentials: ASAuthorizationAppleIDCredential) {
         self.defaults.set(credentials.user, forKey: Keys.userID)
+        defaults.synchronize()
     }
     
     func checkUserDefaultsIsNil() {

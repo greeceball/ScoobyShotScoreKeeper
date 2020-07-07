@@ -15,6 +15,7 @@ class ScoreCardController {
     static let shared = ScoreCardController()
     var scoreCards: [ScoreCard] = []
     var playerReferences: [CKRecord.Reference] = []
+    
     //MARK: - CRUD functions
     func saveScoreCard(players: [User], holes: Int, scores: [Int: Int], completion: @escaping (Result<ScoreCard?, ScoreCardError>) -> Void) {
         guard let currentUser = UserController.shared.currentUser else { return completion(.failure(.noUserLoggedIn)) }
@@ -42,4 +43,24 @@ class ScoreCardController {
         }
     }
     
+    func fetchScoreCards(completion: @escaping (Result<[ScoreCard], ScoreCardError>) -> Void) {
+        
+        guard let currentUser = UserController.shared.currentUser else { return completion(.failure(.noUserLoggedIn)) }
+        
+        let reference = CKRecord.Reference(recordID: currentUser.recordID, action: .deleteSelf)
+        let predicate = NSPredicate(format: "scoreCard == %2", reference)
+        let sort = NSSortDescriptor(key: "creationDate", ascending: true)
+        let query = CKQuery(recordType: "ScoreCard", predicate: predicate)
+        query.sortDescriptors = [sort]
+        
+        publicDB.perform(query, inZoneWith: nil) { (records, error) in
+            if let error = error {
+                return completion(.failure(.ckError(error)))
+            }
+            
+            guard let records = records else { return completion(.failure(.couldNotUnwrap)) }
+            let scoreCards = records.compactMap{( ScoreCard( ckRecord: $0 ) )}
+            completion(.success(scoreCards))
+        }
+    }
 }

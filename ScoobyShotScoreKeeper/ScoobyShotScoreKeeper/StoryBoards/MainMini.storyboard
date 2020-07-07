@@ -10,7 +10,7 @@
         <!--toTabBarVC-->
         <scene sceneID="SrI-XU-Vhq">
             <objects>
-                <tabBarController title="toTabBarVC" id="T2X-l0-mqO" sceneMemberID="viewController">
+                <tabBarController title="toTabBarVC" modalPresentationStyle="fullScreen" id="T2X-l0-mqO" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="TSE-Js-4f8">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>

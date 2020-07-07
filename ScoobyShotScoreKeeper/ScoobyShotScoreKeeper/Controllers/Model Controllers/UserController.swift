@@ -64,8 +64,8 @@ class UserController {
                 // Unwrap reference, and if it doesnt exist return completion failure due to no user logged in
                 guard let reference = reference else { return completion(.failure(.couldNotUnwrap))}
                 // Init the predicate needed bu the query
-                let predicate = NSPredicate(value: true)
-                //let predicate = NSPredicate(format: "%K == %@", argumentArray: [UserConstants.appleUserRefKey, reference])
+                //let predicate = NSPredicate(value: true)
+                let predicate = NSPredicate(format: "%K == %@", argumentArray: [UserConstants.appleUserRefKey, reference])
                 // Init the query to pass into the .perform method
                 let query = CKQuery(recordType: UserConstants.TypeKey, predicate: predicate)
                 // Implement the .perform method

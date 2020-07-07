@@ -18,7 +18,7 @@ class ScoreCardViewController: UIViewController, UITableViewDataSource, UITableV
     var previousScoreCards: [ScoreCard] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadUser()
+        //loadUser()
         print(user)
     }
     @IBAction func shareBtnTapped(_ sender: Any) {
@@ -38,7 +38,7 @@ class ScoreCardViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
     func loadUser() {
-        guard let userID = UserDefaults.value(forKey: "userID") as? String else { return }
+       // guard let userID = UserDefaults.value(forKey: "userID") as? String else { return }
         
         
     }
