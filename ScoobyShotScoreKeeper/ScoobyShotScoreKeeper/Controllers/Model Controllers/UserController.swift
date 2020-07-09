@@ -42,7 +42,7 @@ class UserController {
                     // Unwrap the saved record, unwrap the user initialized from that record
                     guard let record = record,
                         let savedUser = User(ckRecord: record)
-                        else { return completion(.failure(.couldNotUnwrap))}
+                         else { return completion(.failure(.couldNotUnwrap))}
                     
                     print("Created User: \(record.recordID.recordName) successfully")
                     

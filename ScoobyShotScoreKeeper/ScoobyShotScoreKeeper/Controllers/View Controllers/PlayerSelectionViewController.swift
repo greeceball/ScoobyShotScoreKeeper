@@ -18,6 +18,8 @@ class PlayerSelectionViewController: UIViewController {
         super.viewDidLoad()
 
     }
+    @IBAction func addPlayerBottonTapped(_ sender: Any) {
+    }
     
 
     /*

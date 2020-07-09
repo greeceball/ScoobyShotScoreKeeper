@@ -24,7 +24,7 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        resetDefaults()
+        //resetDefaults()
         printUserDefaults()
         NotificationCenter.default.addObserver(self, selector: #selector(appleIDStateRevoked), name: ASAuthorizationAppleIDProvider.credentialRevokedNotification, object: nil)
 
@@ -77,7 +77,6 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate {
             }
         })
         
-        ScoreCardController.shared
         performSegue(withIdentifier: "toTabBarVC", sender: nil)
     }
     

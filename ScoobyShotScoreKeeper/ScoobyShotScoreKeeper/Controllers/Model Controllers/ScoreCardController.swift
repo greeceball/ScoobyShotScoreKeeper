@@ -18,9 +18,9 @@ class ScoreCardController {
     
     //MARK: - CRUD functions
     func saveScoreCard(players: [User], holes: Int, scores: [Int: Int], completion: @escaping (Result<ScoreCard?, ScoreCardError>) -> Void) {
-        guard let currentUser = UserController.shared.currentUser else { return completion(.failure(.noUserLoggedIn)) }
+        //guard let currentUser = UserController.shared.currentUser else { return completion(.failure(.noUserLoggedIn)) }
         
-        let reference = CKRecord.Reference(recordID: currentUser.recordID, action: .deleteSelf)
+        //let reference = CKRecord.Reference(recordID: currentUser.recordID, action: .deleteSelf)
         
         for player in players {
             playerReferences.append(player.appleUserRef!)
@@ -62,5 +62,13 @@ class ScoreCardController {
             let scoreCards = records.compactMap{( ScoreCard( ckRecord: $0 ) )}
             completion(.success(scoreCards))
         }
+    }
+    
+    func updateScoreCard() {
+        
+    }
+    
+    func deleteScoreCard() {
+        
     }
 }

@@ -171,10 +171,10 @@
             </objects>
             <point key="canvasLocation" x="2419" y="-320"/>
         </scene>
-        <!--Player Selection Table View Controller-->
+        <!--Player Selection View Controller-->
         <scene sceneID="nie-Qr-HZy">
             <objects>
-                <viewController id="Hgh-vu-6eb" customClass="PlayerSelectionTableViewController" customModule="ScoobyShotScoreKeeper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Hgh-vu-6eb" customClass="PlayerSelectionViewController" customModule="ScoobyShotScoreKeeper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sBK-gA-ygr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -245,10 +245,14 @@
                         <viewLayoutGuide key="safeArea" id="EIk-gd-FKB"/>
                     </view>
                     <navigationItem key="navigationItem" id="MQ4-64-ZXI">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="dsW-ha-l97"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="dsW-ha-l97">
+                            <connections>
+                                <action selector="addPlayerBottonTapped:" destination="Hgh-vu-6eb" id="IbA-QR-gHc"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="playerSelectionTableView" destination="gax-dm-uhR" id="1A5-cC-9z2"/>
+                        <outlet property="playerSelectionTableView" destination="gax-dm-uhR" id="hqX-SB-8ef"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yDd-ig-XPv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
