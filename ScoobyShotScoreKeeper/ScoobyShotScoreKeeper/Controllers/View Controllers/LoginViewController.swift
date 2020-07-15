@@ -25,7 +25,7 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         //resetDefaults()
-        printUserDefaults()
+
         NotificationCenter.default.addObserver(self, selector: #selector(appleIDStateRevoked), name: ASAuthorizationAppleIDProvider.credentialRevokedNotification, object: nil)
 
         checkUserDefaultsIsNil()
@@ -38,12 +38,6 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate {
         signInBtn.cornerRadius = 10
         
         logInStackView?.addArrangedSubview(signInBtn)
-    }
-    
-    func printUserDefaults() {
-        for (key, value) in defaults.dictionaryRepresentation() {
-            print("\(key) = \(value) \n")
-        }
     }
     
     @objc func handleAppleIdRequest() {
@@ -72,16 +66,23 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate {
                 guard let username = user.username else { return }
                 currentUser = username.description
                 StoredVariables.shared.userInfo["user"] = currentUser
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "toTabBarVC", sender: nil)
+                }
+                
             case .failure(let error):
                 print(error.errorDescription)
             }
         })
         
-        performSegue(withIdentifier: "toTabBarVC", sender: nil)
+        
     }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationVC = segue.destination as? TabBarController, let _ = sender as? User {
+            destinationVC.user = self.user
+        }
     }
     
     

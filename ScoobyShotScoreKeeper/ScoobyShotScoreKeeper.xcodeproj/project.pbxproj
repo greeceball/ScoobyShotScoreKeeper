@@ -19,6 +19,7 @@
 		3445135324A15C7C00001E42 /* NumberOfHolesSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3445135224A15C7C00001E42 /* NumberOfHolesSelectionViewController.swift */; };
 		3448D7E42492AD3D009DCEE5 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3448D7E22492AD3D009DCEE5 /* LogIn.storyboard */; };
 		347D12BD24ABAE3300FFA03C /* ScoreCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347D12BC24ABAE3300FFA03C /* ScoreCardController.swift */; };
+		348AEFED24BF7C3300E2C6E4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348AEFEC24BF7C3300E2C6E4 /* TabBarController.swift */; };
 		34A6F27C248F0F4800F2E418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6F27B248F0F4800F2E418 /* AppDelegate.swift */; };
 		34A6F27E248F0F4800F2E418 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6F27D248F0F4800F2E418 /* SceneDelegate.swift */; };
 		34A6F280248F0F4800F2E418 /* ScoreCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A6F27F248F0F4800F2E418 /* ScoreCardViewController.swift */; };
@@ -64,6 +65,7 @@
 		3445135224A15C7C00001E42 /* NumberOfHolesSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOfHolesSelectionViewController.swift; sourceTree = "<group>"; };
 		3448D7E32492AD3D009DCEE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ScoobyShotScoreKeeper/StoryBoards/Base.lproj/LogIn.storyboard; sourceTree = "<group>"; };
 		347D12BC24ABAE3300FFA03C /* ScoreCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCardController.swift; sourceTree = "<group>"; };
+		348AEFEC24BF7C3300E2C6E4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		34A6F278248F0F4800F2E418 /* ScoobyShotScoreKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoobyShotScoreKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34A6F27B248F0F4800F2E418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34A6F27D248F0F4800F2E418 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				34C85ED324997FF600D1C8A7 /* ScoreKeeperViewController.swift */,
 				3445135224A15C7C00001E42 /* NumberOfHolesSelectionViewController.swift */,
 				34161B2924AE35E400401E88 /* PlayerSelectionViewController.swift */,
+				348AEFEC24BF7C3300E2C6E4 /* TabBarController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 			files = (
 				34A6F282248F0F4800F2E418 /* ProfileViewController.swift in Sources */,
 				347D12BD24ABAE3300FFA03C /* ScoreCardController.swift in Sources */,
+				348AEFED24BF7C3300E2C6E4 /* TabBarController.swift in Sources */,
 				34A6F2B3248F196200F2E418 /* StoredVariables.swift in Sources */,
 				3413784B24ABC28B00B8080F /* ScoreCardError.swift in Sources */,
 				34C85E7C2499221300D1C8A7 /* CustomPageViewController.swift in Sources */,
